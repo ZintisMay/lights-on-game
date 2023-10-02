@@ -46,9 +46,18 @@ class LightOutGame {
             })
 
         },
-        // blue: (x,y) => {
-
-        // }
+        // col
+        blue: (x,y) => {
+            for(let yy = 0; yy < this.width; yy++){
+                this.flipCell(x, yy)
+            }
+        },
+        // row
+        orange: (x,y) => {
+            for(let xx = 0; xx < this.width; xx++){
+                this.flipCell(xx, y)
+            }
+        }
     }
     constructor(targetEl, width, height) {
         this.targetEl = targetEl
@@ -86,7 +95,8 @@ class LightOutGame {
                 el.style.borderRadius = `10%`
                 el.style.border = `3px solid black`
                 let cell = cells[genCoords(x, y)]
-                el.style.backgroundColor = cell.active ? cell.color : ''
+                el.style.backgroundColor = cell.color
+                el.style.transform = cell.active ? '' : 'scale(.2)'
                 el.addEventListener('click', (event) => { this.buttonClick(x, y) })
                 els.push(el)
 
@@ -143,4 +153,4 @@ class LightOutGame {
     }
 }
 
-const game = new LightOutGame(gameArea, 4,4)
+const game = new LightOutGame(gameArea, 3,3)
