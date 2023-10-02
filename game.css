@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: cornflowerblue;
+}
+
+#gameArea {
+    margin: 10px auto;
+    width: calc(100vmin - 20px);
+    height: calc(100vmin - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
